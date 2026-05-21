@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Happy 5th Anniversary</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body{
+      min-height:100vh;
+      overflow:hidden;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background: linear-gradient(135deg,#ff758c,#ff7eb3,#ffd3a5);
+      position:relative;
+      padding:20px;
+    }
+
+    .container{
+      text-align:center;
+      background: rgba(255,255,255,0.15);
+      padding:40px;
+      border-radius:25px;
+      backdrop-filter: blur(10px);
+      box-shadow:0 10px 30px rgba(0,0,0,0.2);
+      width:90%;
+      max-width:600px;
+      color:white;
+      animation: fadeIn 2s ease;
+      z-index:2;
+    }
+
+    .couple-img{
+      width:180px;
+      height:180px;
+      border-radius:50%;
+      object-fit:cover;
+      border:5px solid white;
+      margin-bottom:20px;
+      animation: float 3s ease-in-out infinite;
+      box-shadow:0 0 25px rgba(255,255,255,0.8);
+    }
+
+    h1{
+      font-size:3rem;
+      margin-bottom:10px;
+      text-shadow:0 0 15px white;
+    }
+
+    h2{
+      font-size:2rem;
+      margin-bottom:15px;
+    }
+
+    p{
+      font-size:1.2rem;
+      line-height:1.8;
+      margin-bottom:25px;
+    }
+
+    .btn{
+      padding:12px 30px;
+      border:none;
+      border-radius:30px;
+      background:white;
+      color:#ff4b6e;
+      font-size:1rem;
+      font-weight:bold;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      background:#ff4b6e;
+      color:white;
+      transform:scale(1.05);
+    }
+
+    /* Floating Image */
+
+    @keyframes float{
+      0%{
+        transform:translateY(0px);
+      }
+      50%{
+        transform:translateY(-15px);
+      }
+      100%{
+        transform:translateY(0px);
+      }
+    }
+
+    /* Fade Animation */
+
+    @keyframes fadeIn{
+      from{
+        opacity:0;
+        transform:translateY(40px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    /* Floating Hearts */
+
+    .heart{
+      position:absolute;
+      color:white;
+      font-size:20px;
+      animation: fall linear infinite;
+      top:-10%;
+      z-index:1;
+    }
+
+    @keyframes fall{
+      to{
+        transform:translateY(110vh);
+      }
+    }
+
+    /* Fireworks */
+
+    .firework{
+      position:absolute;
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      animation: explode 1.5s infinite;
+      z-index:1;
+    }
+
+    @keyframes explode{
+      0%{
+        transform:scale(0);
+        opacity:1;
+      }
+      100%{
+        transform:scale(12);
+        opacity:0;
+      }
+    }
+
+    /* Popup */
+
+    .popup{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background:rgba(0,0,0,0.7);
+      display:none;
+      justify-content:center;
+      align-items:center;
+      z-index:1000;
+      padding:15px;
+    }
+
+    .popup-content{
+      background:white;
+      padding:40px;
+      border-radius:25px;
+      text-align:center;
+      width:90%;
+      max-width:500px;
+      animation: popupAnim 0.6s ease;
+      color:#ff4b6e;
+      box-shadow:0 0 30px rgba(255,255,255,0.5);
+    }
+
+    .popup-content h1{
+      margin-bottom:15px;
+    }
+
+    .popup-content h2{
+      margin-bottom:15px;
+    }
+
+    .popup-content p{
+      color:#444;
+      margin-bottom:20px;
+      line-height:1.7;
+    }
+
+    .popup-content button{
+      padding:10px 25px;
+      border:none;
+      border-radius:30px;
+      background:#ff4b6e;
+      color:white;
+      cursor:pointer;
+      font-size:1rem;
+    }
+
+    .popup-hearts{
+      font-size:30px;
+      margin-bottom:20px;
+      animation: heartMove 1s infinite alternate;
+    }
+
+    @keyframes popupAnim{
+      from{
+        transform:scale(0.5);
+        opacity:0;
+      }
+      to{
+        transform:scale(1);
+        opacity:1;
+      }
+    }
+
+    @keyframes heartMove{
+      from{
+        transform:translateY(0);
+      }
+      to{
+        transform:translateY(-10px);
+      }
+    }
+
+    /* Mobile Responsive */
+
+    @media(max-width:600px){
+
+      body{
+        padding:15px;
+        overflow:auto;
+      }
+
+      .container{
+        width:100%;
+        padding:25px 18px;
+        border-radius:20px;
+      }
+
+      .couple-img{
+        width:130px;
+        height:130px;
+      }
+
+      h1{
+        font-size:2rem;
+      }
+
+      h2{
+        font-size:1.4rem;
+      }
+
+      p{
+        font-size:0.95rem;
+        line-height:1.6;
+      }
+
+      .btn{
+        width:100%;
+      }
+
+      .popup-content{
+        width:95%;
+        padding:25px 18px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Main Content -->
+
+  <div class="container">
+
+    <!-- Couple Image -->
+    <img src="couple.jpg" class="couple-img" alt="Couple Photo">
+
+    <h1>Happy Anniversary ❤️</h1>
+
+    <h2>Atul & Rubi</h2>
+
+    <p>
+      Wishing you both a lifetime full of love,
+      happiness, laughter, and beautiful memories.
+      May your bond grow stronger every year.
+      Happy 5th Anniversary! 💖
+    </p>
+
+    <!-- Button -->
+
+    <button class="btn" onclick="startCelebration()">
+      Click For Surprise 🎉
+    </button>
+
+  </div>
+
+  <!-- Popup -->
+
+  <div class="popup" id="popup">
+
+    <div class="popup-content">
+
+      <h1>❤️ Happy 5th Anniversary ❤️</h1>
+
+      <h2>Atul & Rubi</h2>
+
+      <p>
+        May your love continue to shine brighter every year.
+        Wishing you endless happiness, laughter,
+        and beautiful memories together. 💖
+      </p>
+
+      <div class="popup-hearts">
+        💖 💕 ❤️ 💘 💝
+      </div>
+
+      <button onclick="closeSurprise()">
+        Close
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- Hidden Music -->
+
+  <audio id="bgMusic" loop>
+    <source src="couple.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- JavaScript -->
+
+  <script>
+
+    // Floating Hearts
+
+    for(let i=0;i<30;i++){
+
+      let heart=document.createElement("div");
+
+      heart.className="heart";
+      heart.innerHTML="❤️";
+
+      heart.style.left=Math.random()*100+"vw";
+      heart.style.animationDuration=(Math.random()*5+5)+"s";
+      heart.style.fontSize=(Math.random()*20+15)+"px";
+
+      document.body.appendChild(heart);
+    }
+
+    // Fireworks
+
+    for(let i=0;i<15;i++){
+
+      let firework=document.createElement("div");
+
+      firework.className="firework";
+
+      firework.style.left=Math.random()*100+"vw";
+      firework.style.top=Math.random()*100+"vh";
+
+      firework.style.background =
+      `hsl(${Math.random()*360},100%,70%)`;
+
+      firework.style.animationDelay =
+      Math.random()*2 + "s";
+
+      document.body.appendChild(firework);
+    }
+
+    // Music
+
+    const music = document.getElementById("bgMusic");
+
+    // Start Celebration
+
+    function startCelebration(){
+
+      music.play();
+
+      document.getElementById("popup").style.display = "flex";
+    }
+
+    // Close Popup
+
+    function closeSurprise(){
+
+      document.getElementById("popup").style.display = "none";
+    }
+
+  </script>
+
+</body>
+</html>
